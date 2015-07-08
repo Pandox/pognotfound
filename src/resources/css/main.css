@@ -1,0 +1,36 @@
+html {
+  font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #333;
+  font-size: 1rem;
+}
+
+.day {
+    font-size: 6rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.month-year {
+    text-align: center;
+}
+
+p {
+  font-weight: 300;
+  font-size: 1.25rem;
+}
+
+article .content h2 {
+  font-weight: 800;
+  color: #000;
+  font-size: 2rem;
+  text-align: center;
+}
