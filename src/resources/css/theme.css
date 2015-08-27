@@ -11,7 +11,12 @@ a:hover {
     background: #FFF;
 }
 
-
+header  i {
+    color: #C5CAE9;
+}
+header  i:hover {
+    color: #FFF;
+}
 header {
     background: #3F51B5;
 }
