@@ -8,18 +8,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Language" content="pt-br">
-    <link rel="shortcut icon" href="/favicon.ico?v=4" />
+    <link rel="shortcut icon" href="/favicon.ico?v=4"/>
 
     <!-- Font -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,800,400' rel='stylesheet' type='text/css'>
 
     <!-- jQuery -->
-    <script async src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script async src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
 
     <!-- Normalizer -->
-    <link href="../bower_components/normalize.css/normalize.css" rel="stylesheet" />
+    <link href="../bower_components/normalize.css/normalize.css" rel="stylesheet"/>
 
     <!-- ModernizrJS -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
@@ -27,9 +27,9 @@
     <!-- Foundation -->
     <script src="../bower_components/foundation/js/foundation.min.js"></script>
     <!-- <link href="../bower_components/foundation/css/normalize.min.css" rel="stylesheet" /> -->
-    <link href="../bower_components/foundation/css/foundation.min.css" rel="stylesheet" />
+    <link href="../bower_components/foundation/css/foundation.min.css" rel="stylesheet"/>
     <!-- Foundation Icons -->
-    <link href="../bower_components/foundation-icon-fonts/foundation-icons.css" rel="stylesheet" />
+    <link href="../bower_components/foundation-icon-fonts/foundation-icons.css" rel="stylesheet"/>
 
     <!-- Bootstrap Icons -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
@@ -40,19 +40,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
     -->
 
-    <!-- Polymer -->
-    <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-
-    <!-- web components -->
-    <link rel="import" href="resources/polymer/menu-btn.html">
-
-
-
-
-
     <!-- build:css resources/css/style.min.css -->
-    <link href="resources/css/main.css" rel="stylesheet" />
-    <link href="resources/css/theme.css" rel="stylesheet" />
+    <link href="resources/css/main.css" rel="stylesheet"/>
+    <link href="resources/css/modules/menu-btn.css" rel="stylesheet"/>
+    <link href="resources/css/theme.css" rel="stylesheet"/>
     <!-- endbuild -->
 
     <!-- end HEAD -->
@@ -60,123 +51,153 @@
 </head>
 
 <body>
-  <btn-menu-hide></btn-menu-hide>
+<div id="menu-btn" class="shadow-2">
+    <i class="fi-plus"></i>
+</div>
 
-  <div id="aside-fade"></div>
-  <aside>
+<!--<div id="aside-fade"></div>-->
+<aside class="shadow-2">
     <div class="row">
-      <div class="small-12 small-centered columns">
-        <h1>Menu</h1>
-      </div>
+        <div class="small-12 small-centered columns">
+            <h1>Menu</h1>
+        </div>
+        <div class="">
+            <nav id="navigation">
+                <ul>
+                    <li><a>Home</a></li>
+                    <li><a>Sobre mim</a></li>
+                    <li><a>Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-  </aside>
+</aside>
 
 
-<header>
-  <div class="row">
-    <div class="small-12 small-centered columns">
-      <h1>M.</h1>
-      <h3>Developer <i class="fi-heart"></i><h3/>
-    </div>
-    <div class="scroller" data-href="section">
-      <span class="glyphicon glyphicon-chevron-down"></span>
-    </div>
-  </div>
+<header class="shadow-1">
+        <div class="row">
+
+            <div class="content">
+                <div class="small-12 small-centered columns">
+                    <h1>Matheus Messora</h1>
+
+                    <h3>
+                        Fullstack Software Engineer
+                    </h3>
+                    <p><i class="fi-social-github"></i> <i class="fi-social-twitter"></i> <i class="fi-social-linkedin"></i> </p>
+
+                </div>
+            </div>
+            <div class="scroller" data-href="section">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </div>
+        </div>
 </header>
 
 
 <!-- Blog Posts -->
 <section>
-  <main>
-    <div class="row">
-      <div class="small-12 small-centered columns">
+    <main>
+        <div class="row">
+            <div class="small-12 small-centered columns">
 
-        <!-- Article -->
-        <article class="clearfix">
-          <div class="small-12 medium-3 columns">
-            <a>
-              <time datetime="2015-01-07 22:00">
-                  <span class="day small-12 columns">12</span>
-                  <span class="month-year small-12 columns">Julho 2015</span>
-              </time>
-            </a>
-          </div>
-          <div class="content small-12 medium-9 columns">
-            <h2>#12 - Fazendo TDD de verdade</h2>
-            <p class="description">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining... <a href="#">Leia mais sobre Fazendo TDD de verdade</a>
-            </p>
-            <footer>
-              <div class="tags">
-                <a href="/tags/#svg">svg</a>
-                <a href="/tags/#svg">css</a>
-              </div>
-            </footer>
+                <!-- Article -->
+                <article class="clearfix card shadow-1">
+                    <div class="small-12 medium-3 columns">
+                        <a>
+                            <time datetime="2015-01-07 22:00">
+                                <span class="day small-12 columns">12</span>
+                                <span class="month-year small-12 columns">Julho 2015</span>
+                            </time>
+                        </a>
+                    </div>
+                    <div class="content small-12 medium-9 columns">
+                        <h2>#12 - Fazendo TDD de verdade</h2>
 
-          </div>
-        </article>
+                        <p class="description">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining... <a href="#">Leia mais
+                            sobre Fazendo TDD de verdade</a>
+                        </p>
+                        <footer>
+                            <div class="tags">
+                                <a href="/tags/#svg">svg</a>
+                                <a href="/tags/#svg">css</a>
+                            </div>
+                        </footer>
 
-
-
-        <!-- Article -->
-        <article class="clearfix">
-          <div class="small-12 medium-3 columns">
-            <a>
-              <time datetime="2015-01-07 22:00">
-                  <span class="day small-12 columns">28</span>
-                  <span class="month-year small-12 columns">Julho 2015</span>
-              </time>
-            </a>
-          </div>
-          <div class="content small-12 medium-9 columns">
-            <h2>#12 - Fazendo TDD de verdade</h2>
-            <p class="description">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book, remaining... <a href="#">Leia mais sobre Fazendo TDD de verdade</a>
-            </p>
-            <footer>
-              <div class="tags">
-                <a href="/tags/#svg">svg</a>
-                <a href="/tags/#svg">css</a>
-              </div>
-            </footer>
-
-          </div>
-        </article>
+                    </div>
+                </article>
 
 
+                <!-- Article -->
+                <article class="clearfix card shadow-1">
+                    <div class="small-12 medium-3 columns">
+                        <a>
+                            <time datetime="2015-01-07 22:00">
+                                <span class="day small-12 columns">28</span>
+                                <span class="month-year small-12 columns">Julho 2015</span>
+                            </time>
+                        </a>
+                    </div>
+                    <div class="content small-12 medium-9 columns">
+                        <h2>#12 - Fazendo TDD de verdade</h2>
+
+                        <p class="description">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book, remaining... <a href="#">Leia
+                            mais sobre Fazendo TDD de verdade</a>
+                        </p>
+                        <footer>
+                            <div class="tags">
+                                <a href="/tags/#svg">svg</a>
+                                <a href="/tags/#svg">css</a>
+                            </div>
+                        </footer>
+
+                    </div>
+                </article>
 
 
-        <!-- Article -->
-        <article class="clearfix">
-          <div class="small-12 medium-3 columns">
-            <a>
-              <time datetime="2015-01-07 22:00">
-                  <span class="day small-12 columns">28</span>
-                  <span class="month-year small-12 columns">Julho 2015</span>
-              </time>
-            </a>
-          </div>
-          <div class="content small-12 medium-9 columns">
-            <h2>#12 - Fazendo TDD de verdade</h2>
-            <p class="description">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book, remaining... <a href="#">Leia mais sobre Fazendo TDD de verdade</a>
-            </p>
-            <footer>
-              <div class="tags">
-                <a href="/tags/#svg">svg</a>
-                <a href="/tags/#svg">css</a>
-              </div>
-            </footer>
+                <!-- Article -->
+                <article class="clearfix card shadow-1">
+                    <div class="small-12 medium-3 columns">
+                        <a>
+                            <time datetime="2015-01-07 22:00">
+                                <span class="day small-12 columns">28</span>
+                                <span class="month-year small-12 columns">Julho 2015</span>
+                            </time>
+                        </a>
+                    </div>
+                    <div class="content small-12 medium-9 columns">
+                        <h2>#12 - Fazendo TDD de verdade</h2>
 
-          </div>
-        </article>
-      </div>
-    </div>
-  </main>
+                        <p class="description">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book, remaining... <a href="#">Leia
+                            mais sobre Fazendo TDD de verdade</a>
+                        </p>
+                        <footer>
+                            <div class="tags">
+                                <a href="/tags/#svg">svg</a>
+                                <a href="/tags/#svg">css</a>
+                            </div>
+                        </footer>
+
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
 </section>
 
 <!-- build:js resources/js/app.min.css -->
 <script src="resources/js/app.js"></script>
+<script src="resources/js/modules/menu-btn.js"></script>
 <!-- endbuild -->
 
 

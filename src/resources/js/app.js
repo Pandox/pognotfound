@@ -17,13 +17,17 @@ PANDOX.SYSTEM = function () {
         });
 
         $('.fi-heart').click(function() {
-            $('aside').toggleClass('open', 200);
-            $('#aside-fade').toggleClass('open', 200);
-        })
+            menu();
+            //$('aside').toggleClass('open', 200);
+            //$('#aside-fade').toggleClass('open', 200);
+            //$('#menu-btn').toggleClass('open', 200);
+        });
 
         $('#aside-fade').click(function() {
-            $('aside').toggleClass('open', 200);
-            $('#aside-fade').toggleClass('open', 200);
+            //$('aside').toggleClass('open', 200);
+            //$('#aside-fade').toggleClass('open', 200);
+            //$('#menu-btn').toggleClass('open', 200);
+            menu();
         })
 
     };
@@ -31,6 +35,7 @@ PANDOX.SYSTEM = function () {
     var menu = function () {
       $('aside').toggleClass('open', 200);
       $('#aside-fade').toggleClass('open', 200);
+      $('#menu-btn').toggleClass('open', 200);
     };
 
 
