@@ -10,9 +10,13 @@ a:hover {
 .material {
     background: #FFF;
 }
+
+
+
 header {
     background: #3F51B5;
 }
+
 
 
 aside {
@@ -33,6 +37,12 @@ aside nav li a:hover {
     color: #FFFFFF;
 }
 
+
+
 article .content h2 {
     color: #3F51B5;
+}
+footer .tags a:hover {
+    background: #3F51B5;
+    color: #F5F5F5;
 }

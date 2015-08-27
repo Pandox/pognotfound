@@ -122,7 +122,7 @@ footer {
 
 footer .tags a {
     border-radius: 5px;
-    border: 1px solid #008CBA;
+    text-decoration: none;
     padding: 2px 10px;
 }
 
