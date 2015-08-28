@@ -19,8 +19,13 @@ header  i:hover {
 }
 header {
     background: #3F51B5;
+    color: #FFF;
 }
 
+article .content h3 {
+    /*color: #3F51B5;*/
+    color: rgba(0,0,0,0.7);
+}
 
 
 aside {

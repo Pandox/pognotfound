@@ -3,6 +3,17 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: rgba(0,0,0,0.7);
+    font-size: 1rem;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans', sans-serif;
 }
@@ -82,12 +93,6 @@ header i {
     margin-right: 0.2em;
 }
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    color: #333;
-    font-size: 1rem;
-}
 
 .day {
     font-size: 5rem;
@@ -113,7 +118,13 @@ article .content h2 {
     font-weight: 800;
     font-size: 2rem;
     text-align: left;
-    margin: 26.50px 0 15px 0;
+    margin: 26px 0 15px 0;
+}
+article .content h3 {
+    font-weight: 800;
+    font-size: 1.8rem;
+    text-align: left;
+    margin: 23px 0 10px 0;
 }
 
 footer {
