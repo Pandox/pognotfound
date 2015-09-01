@@ -101,88 +101,81 @@
                 <!-- Article -->
                 <article class="clearfix card shadow-1">
                     <div class="content small-12 columns">
-                        <h3>Introdução</h3>
+<h3>Introdução</h3>
 
-                        <p class="description">
-                            Olá colegas, neste tutorial irei mostrar como preparar um ambiente de trabalho para desenvolvimento de aplicações JAVA e JavaWEB.
-                            Não irei mostrar nenhum código, mas sim, quais os programas necessários para começar sua jornada de programação JAVA.
-                            Primeiramente você precisará de uma IDE (integrated development environment). Uma IDE basicamente é um software que compreende algumas funções básicas que todo programador deve possuir em mãos.
-                        </p>
+<p class="description">
+    Neste tutorial você irá montar um ambiente completo para desenvolvimento de aplicações Java. Este tutorial é focado para os iniciantes neste ramo de TI ou programadores de outras linguagens.<br />
+</p>
+<p>
+    Primeiramente você precisará instalar o Java na sua máquina e depois baixar alguma IDE (Integrated Development Environment). Uma IDE basicamente é um software que facilita diversas funções básicas que todo programador deve ter em mãos. Imagine a IDE como o Word para programadores.
+</p>
 
+<h3>Princípios basícos do Java</h3>
 
+<p>
+    Primeiramente, você deve compreender as diferenças entre Java, JDK e JRE. <a href="https://www.java.com/pt_BR/download/faq/whatis_java.xml" target="_blank">JAVA é uma linguagem de programação orientada a objeto</a>. Todas as aplicações feitas em java são primeiramente compiladas no que chamamos de bytecodes, que por sua vez são interpretados por uma máquina virtual.
+</p>
+<p>
+    Portanto para desenvolver qualquer aplicativo JAVA, você deve possuir, um compilador java (javac) e uma máquina virtual java (JVM). Ela está inclusa em qualquer pacote JRE (Java Runtime Enviroment) da Oracle. Para usuários comuns apenas a JRE já é suficiente, mas para desenvolvedores, um pacote mais elaborado, ou melhor, um pacote próprio para desenvolvimento JAVA é necessário. Este pacote é o JDK (Java Development Kit), que inclui, entre muitas outras coisas, o <strong>javac</strong> em seu pacote.
+</p>
+<p>
+    <h3>Começando</h3>
+</p>
+<p>
+    <ul>
+        <li>
+        Acesse a página de Download do JDK <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">www.oracle.com</a>
+        </li>
+        <li>Leia e depois marque a opção sobre os Termos de Licensa.</li>
+        <li>Selecione o sistema operacional do seu computador.</li>
+        <li>Clique no link com o ícone de download</li>
+        <li>Por exemplo, se seu sistema operacional é o Windows 8 64bits, clique no link <span class="strong">jdk-8u60-windows-x64.exe</span></li>
+    </ul>
+</p>
+                        <p>Para usuários Ubuntu, existe uma opção rápida pelo apt-get. Basta executar:
+                            sudo apt-get install default-jdk</p>
 
+<h3>Confirmando Instalação do JDK…</h3>
+<p>
+    Após ter feito os passos descritos acima, vamos ter certeza que você fez a coisa certa. Abra um terminal de comando (famoso cmd do windows) ou algum terminal do sistema operacional Linux e digite:
+</p>
+<p>
+    $ java -version
+</p>
+<p>O resultado deve ser algo parecido com o abaixo:</p>
+<p>
+    $ java -version<br />
+    java version "1.7.0_79"<br />
+    Java(TM) SE Runtime Environment (build 1.7.0_79-b15)<br />
+    Java HotSpot(TM) Client VM (build 24.79-b02, mixed mode)<br />
 
+</p>
+<p>
+    Caso não apareça essas mensagens, repita os passos anteriores para certificar que a instalação foi realizada com sucesso.
+    O comando descrito acima exibe na tela a versão do meu java, no caso 1.6.0, rodando JDK6b20 dentro do sistema operacional ubuntu.
+</p>
+<p>
+   <h3>Baixando Eclipse IDE </h3>
+<p>
+    Vamos agora para a última parte que é o download do Eclipse. Para ser sincero essa é a parte mais fácil.
+</p>
+<p>
+    Apenas faça o download do Eclipse IDE for Java EE Developers, <a href="https://eclipse.org/downloads/">clicando neste link</a>, descompacte o arquivo em alguma pasta e execute o eclipse.exe.
+</p>
+<p>
+    Após ter realizado todos os passos, parabéns, você está com todo o seu sistema pronto para desenvolver aplicativos Java.
+</p>
+<p>
+   <h3>Considerações Finais</h3>
+</p>
+<p>
+    <ul>
+        <li>A versão do Eclipse IDE for Java EE Developers é a mais completa de todas e totalmente gratuita. Já vem pré-instalado os melhores plugins para desenvolvimento Web e corporativo de aplicações Java.</li>
+        <li>Nos sistemas operacionais Linux que possuem gerenciamento de pacotes como o Ubuntu ou Fedora, é possível instalar o Eclipse diretamente pelo apt-get. Verifique a sintaxe correta de acordo com o S.O.</li>
+        <li>De uma olhada também em outras IDEs do mercado, como o <a href="https://netbeans.org/" target="_blank">Netbeans</a> (possui versão gratuita) e o <a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ</a> (possui versão paga e gratuita).</li>
 
-                            Um editor de códigos fontes
-                            Um compilador ou interpretador (no caso, ambos em JAVA. Entrarei em mais detalhes sobre isso em um próximo tópico)
-                            Um debugger (usado para realizar testes e encontrar erros em sistemas)
-                            Entre outras…
-                            Para desenvolvimento na linguagem JAVA, existem no mercado 2 IDEs famosas e completamente grátis. NetBeans e Eclipse IDE.
-
-                            Escolher entre uma IDE ou a outra, é questão de gosto. Neste tutorial irei abordar apenas a IDE Eclipse por eu achar, pessoalmente, uma IDE mais robusta de se trabalhar. Sugiro para quem está começando a baixar ambas e verificar qual lhe agrada melhor.
-
-                            Basicamente as diferenças entre elas são que o NetBeans é uma IDE com um melhor suporte nativo para interfaces gráficas. Já o Eclipse possui ótimas ferramentas para desenvolvimento de aplicações corporativas e Web de grande porte.
-
-                            Outra questão que é bom deixar claro é que ambas fazem perfeitamente o mesmo trabalho como IDEs, além de oferecerem milhares de plugins para melhorar ainda mais as ferramentas de suporte para desenvolvimento. Como por exemplo, existem vários plugins para o Eclipse para desenvolvimento de interface gráfica, mas já no NetBeans isso vem incluso por padrão.
-
-                            Princípios Basícos…
-
-                            Primeiramente temos que baixar o JAVA propriamente dito. Para simplificar, o JAVA é uma linguagem de programação orientada a objeto desenvolvida pela Sun Microsystems em 1995. Todas as aplicações JAVA são primeiramente compiladas no que chamamos de bytecodes, que por sua vez são interpretados pela Java Virtual Machine. Entraremos em mais detalhes sobre o que é JVM e bytecodes em outro post.
-
-                            Portanto para qualquer aplicativo JAVA, temos que possuir em nossas máquinas a JVM. Ela está inclusa em qualquer pacote JRE (Java Runtime Enviroment). Para usuários comuns apenas a JRE já é suficiente, mas como somos desenvolvedores, precisamos de um pacote mais elaborado, ou melhor, um pacote próprio para desenvolvimento JAVA. O tão falado JDK (Java Development Kit).
-
-                            O JDK compreende algumas ferramentas úteis para o desenvolvimento de aplicações e realização de testes na plataforma JAVA.
-
-                            Vamos Começar…
-
-                            No momento que este post foi escrito, o java estava na versão 6update24. Inclusive  a versão 7 do java esta em beta testes e disponível para download, mas isso ficará para uma próxima vez.
-
-                            Acesse a página de Download do JDK http://www.oracle.com/
-                            Clique em Download JDK
-                            Selecione o sistema operacional do seu computador.
-                            Leia e depois marque a opção sobre os Termos de Serviço
-                            Clique no link com o ícone de download
-
-
-                            A partir daqui, o tutorial diferencia de acordo com o sistema operacional que você utiliza. Provavelmente se você utiliza qualquer distribuição Linux, o JDK já vem pré-instalado no sistema operacional. Nos sistemas Windows e MacOS, execute o arquivo e siga as instruções na tela (só apertar NEXT).
-
-                            Confirmando Instalação do JDK…
-
-                            Após ter feito os passos descritos acima, vamos ter certeza que você fez a coisa certa. Abre um terminal de comando (famoso cmd do windows) ou algum terminal do sistema operacional Linux.
-
-                            Digite o seguinte no prompt:  java -version
-
-                            # java -version
-                            # java version "1.6.0_20"
-                            # OpenJDK Runtime Environment (IcedTea6 1.9.5) (6b20-1.9.5-0ubuntu1)
-                            # OpenJDK Server VM (build 19.0-b09, mixed mode)
-                            Caso não apareça essas mensagens, repita os passos anteriores para certificar que a instalação foi realizada com sucesso.
-                            O comando descrito acima exibe na tela a versão do meu java, no caso 1.6.0, rodando JDK6b20 dentro do sistema operacional ubuntu.
-
-                            Baixando Eclipse IDE…
-
-                            Vamos agora para a última parte que é o download do Eclipse. Para ser sincero essa é a parte mais fácil.
-
-                            Resumindo, apenas baixe o Eclipse IDE for Java EE Developers, descompacte o arquivo em alguma pasta qualquer e execute o eclipse.exe e pronto!
-
-                            Vamos aos passos detalhados:
-
-                            Acesse a página de Download do Eclipse IDE http://www.eclipse.org/downloads/
-                            Baixe o arquivo Eclipse IDE for Java EE Developers, 205 MB clicando no botão relacionado ao seu sistema operacional (32 ou 64bits).
-                            Descompacte o arquivo em alguma pasta do seu HD
-                            Execute o arquivo eclipse.exe
-                            Caso apareça a splash screen do Eclipse (vide foto), o programa irá perguntar em qual pasta você quer guardar seus projetos JAVA. Apenas apertando o botão OK é o suficiente.
-                            PRONTO!
-
-
-                            Após ter realizado todos estes testes, parabéns, você está com todo o seu sistema pronto para desenvolver aplicativos Java.
-
-                            Considerações Finais…
-
-                            Por questões de compatibilidade e experiencia própria, baixe apenas as versões Java e do Eclipse IDE no formato de 32Bits mesmo seu processador sendo 64Bits.
-                            A versão do Eclipse IDE for Java EE Developers é a mais completa de todas e totalmente gratuita. Já vem pré-instalado os melhores plugins para desenvolvimento Web e corporativo de aplicações Java.
-                            Nos sistemas operacionais Linux que possuem gerenciamento de pacotes como o Ubuntu ou Fedora, é possível instalar o Eclipse diretamente pelo apt-get. Verifiquea sintaxe correta de acordo com o S.O.
-                        </p>
+    </ul>
+</p>
                         <footer>
                             <div class="tags">
                                 <a class="shadow-1" href="/tags/#svg">svg</a>
