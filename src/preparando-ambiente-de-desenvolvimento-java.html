@@ -116,7 +116,7 @@
     Primeiramente, você deve compreender as diferenças entre Java, JDK e JRE. <a href="https://www.java.com/pt_BR/download/faq/whatis_java.xml" target="_blank">JAVA é uma linguagem de programação orientada a objeto</a>. Todas as aplicações feitas em java são primeiramente compiladas no que chamamos de bytecodes, que por sua vez são interpretados por uma máquina virtual.
 </p>
 <p>
-    Portanto para desenvolver qualquer aplicativo JAVA, você deve possuir, um compilador java (javac) e uma máquina virtual java (JVM). Ela está inclusa em qualquer pacote JRE (Java Runtime Enviroment) da Oracle. Para usuários comuns apenas a JRE já é suficiente, mas para desenvolvedores, um pacote mais elaborado, ou melhor, um pacote próprio para desenvolvimento JAVA é necessário. Este pacote é o JDK (Java Development Kit), que inclui, entre muitas outras coisas, o <strong>javac</strong> em seu pacote.
+    Portanto para desenvolver qualquer aplicativo JAVA, você deve possuir, um compilador java (javac) e uma máquina virtual java (JVM). Ela está inclusa em qualquer pacote JRE (Java Runtime Enviroment) da Oracle. Para usuários comuns apenas a JRE já é suficiente, mas para desenvolvedores, um pacote mais elaborado, ou melhor, um pacote próprio para desenvolvimento JAVA é necessário. Este pacote é o JDK (Java Development Kit), que inclui, entre muitas outras coisas, o javac em seu pacote.
 </p>
 <p>
     <h3>Começando</h3>
@@ -129,9 +129,9 @@
         <li>Leia e depois marque a opção sobre os Termos de Licensa.</li>
         <li>Selecione o sistema operacional do seu computador.</li>
         <li>Clique no link com o ícone de download</li>
-        <li>Por exemplo, se seu sistema operacional é o Windows 8 64bits, clique no link <span class="strong">jdk-8u60-windows-x64.exe</span></li>
     </ul>
 </p>
+                        <p>Por exemplo, se seu sistema operacional é o Windows 8 64bits, clique no link <span class="strong">jdk-8u60-windows-x64.exe</span></p>
                         <p>Para usuários Ubuntu, existe uma opção rápida pelo apt-get. Basta executar:
                             sudo apt-get install default-jdk</p>
 
@@ -139,20 +139,19 @@
 <p>
     Após ter feito os passos descritos acima, vamos ter certeza que você fez a coisa certa. Abra um terminal de comando (famoso cmd do windows) ou algum terminal do sistema operacional Linux e digite:
 </p>
-<p>
-    $ java -version
-</p>
+<pre>$ java -version</pre>
 <p>O resultado deve ser algo parecido com o abaixo:</p>
-<p>
-    $ java -version<br />
-    java version "1.7.0_79"<br />
-    Java(TM) SE Runtime Environment (build 1.7.0_79-b15)<br />
-    Java HotSpot(TM) Client VM (build 24.79-b02, mixed mode)<br />
+<pre>
+$ java -version
 
-</p>
+java version "1.7.0_79"
+Java(TM) SE Runtime Environment (build 1.7.0_79-b15)
+Java HotSpot(TM) Client VM (build 24.79-b02, mixed mode)
+
+</pre>
 <p>
     Caso não apareça essas mensagens, repita os passos anteriores para certificar que a instalação foi realizada com sucesso.
-    O comando descrito acima exibe na tela a versão do meu java, no caso 1.6.0, rodando JDK6b20 dentro do sistema operacional ubuntu.
+    O comando descrito acima exibe na tela a versão do meu java, no caso 1.7.0.
 </p>
 <p>
    <h3>Baixando Eclipse IDE </h3>
@@ -160,7 +159,7 @@
     Vamos agora para a última parte que é o download do Eclipse. Para ser sincero essa é a parte mais fácil.
 </p>
 <p>
-    Apenas faça o download do Eclipse IDE for Java EE Developers, <a href="https://eclipse.org/downloads/">clicando neste link</a>, descompacte o arquivo em alguma pasta e execute o eclipse.exe.
+    Apenas faça o download do Eclipse IDE for Java EE Developers, <a href="https://eclipse.org/downloads/" target="_blank">clicando neste link</a>, descompacte o arquivo em alguma pasta e execute o eclipse.exe.
 </p>
 <p>
     Após ter realizado todos os passos, parabéns, você está com todo o seu sistema pronto para desenvolver aplicativos Java.
@@ -178,8 +177,9 @@
 </p>
                         <footer>
                             <div class="tags">
-                                <a class="shadow-1" href="/tags/#svg">svg</a>
-                                <a class="shadow-1"  href="/tags/#svg">css</a>
+                                <a class="shadow-1" href="/tags/#java">java</a>
+                                <a class="shadow-1"  href="/tags/#jvm">jvm</a>
+                                <a class="shadow-1"  href="/tags/#ide">IDE</a>
                             </div>
                         </footer>
 
