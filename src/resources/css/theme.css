@@ -1,11 +1,18 @@
 body {
     background: #FAFAFA;
 }
-a, a:active, a:visited {
+a, a:active, a:visited, a:visited {
     color: #3F51B5;
 }
 a:hover {
     color: #3F51B5;
+}
+strong {
+    color: #EF6C00;
+    font-weight: 400;
+}
+ul {
+
 }
 .material {
     background: #FFF;
@@ -21,12 +28,6 @@ header {
     background: #3F51B5;
     color: #FFF;
 }
-
-article .content h3 {
-    /*color: #3F51B5;*/
-    color: rgba(0,0,0,0.7);
-}
-
 
 aside {
     background: #FAFAFA;
@@ -48,10 +49,17 @@ aside nav li a:hover {
 
 
 
+article .content h3, article .content h4 {
+    /*color: #3F51B5;*/
+    color: rgba(0,0,0,0.7);
+}
 article .content h2 {
     color: #3F51B5;
 }
-footer .tags a:hover {
+article blockquote {
+    border-left-color: #EF6C00;
+}
+article footer .tags a:hover {
     background: #3F51B5;
     color: #F5F5F5;
 }
