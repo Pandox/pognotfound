@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         },
 
         useminPrepare: {
-            src: ['src/includes/head.html'],
+            src: ['src/includes/head.html', 'src/includes/footer.html'],
             options: {
                 dest: 'dev', // destino arquivos concatenados -> unificados
                 root: 'src'
@@ -37,7 +37,7 @@ module.exports = function (grunt) {
         },
 
         usemin: {
-            html: 'dev/index.html',
+            html: 'dev/**/*.html',
             options: {
                 assetsDirs: ['dev']
             }
@@ -50,8 +50,8 @@ module.exports = function (grunt) {
                     flatten: true
                 },
                 files: [{
-                    src: ['dev/index.html'],
-                    dest: 'dev/index.html', // it must override
+                    src: ['dev/**/*.html'],
+                    dest: 'dev', // it must override
                     flatten: true
                 }]
             }
@@ -81,7 +81,7 @@ module.exports = function (grunt) {
         'concat:generated',
         'cssmin:generated',
         'uglify:generated',
-        'usemin'
-        //'clean:trash'
+        'usemin',
+        'clean:trash'
     ]);
 };
