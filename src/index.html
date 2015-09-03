@@ -3,75 +3,13 @@
 
 <head>
     <title>POGnotFound </title>
-    <!-- HEAD -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Language" content="pt-br">
-    <link rel="shortcut icon" href="/favicon.ico?v=4"/>
 
-    <!-- Font -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,800,400' rel='stylesheet' type='text/css'>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-
-
-    <!-- Normalizer -->
-    <link href="../bower_components/normalize.css/normalize.css" rel="stylesheet"/>
-
-    <!-- ModernizrJS -->
-    <script src="../bower_components/modernizr/modernizr.js"></script>
-
-    <!-- Foundation -->
-    <script src="../bower_components/foundation/js/foundation.min.js"></script>
-    <!-- <link href="../bower_components/foundation/css/normalize.min.css" rel="stylesheet" /> -->
-    <link href="../bower_components/foundation/css/foundation.min.css" rel="stylesheet"/>
-    <!-- Foundation Icons -->
-    <link href="../bower_components/foundation-icon-fonts/foundation-icons.css" rel="stylesheet"/>
-
-    <!-- Bootstrap Icons -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
-
-
-    <!-- Bootstrap
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
-    -->
-
-    <!-- build:css resources/css/style.min.css -->
-    <link href="resources/css/main.css" rel="stylesheet"/>
-    <link href="resources/css/modules/menu-btn.css" rel="stylesheet"/>
-    <link href="resources/css/theme.css" rel="stylesheet"/>
-    <!-- endbuild -->
-
-    <!-- end HEAD -->
+    include "includes/head.html"
 
 </head>
 
 <body>
-<div id="menu-btn" class="shadow-2">
-    <i class="fi-plus"></i>
-</div>
-
-<!--<div id="aside-fade"></div>-->
-<aside class="shadow-2">
-    <div class="row">
-        <div class="small-12 small-centered columns">
-            <h1>Menu</h1>
-        </div>
-        <div class="">
-            <nav id="navigation">
-                <ul>
-                    <li><a>Home</a></li>
-                    <li><a>Sobre mim</a></li>
-                    <li><a>Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</aside>
+include "includes/menu.html"
 
 
 <header class="shadow-1">
@@ -195,11 +133,7 @@
     </main>
 </section>
 
-<!-- build:js resources/js/app.min.css -->
-<script src="resources/js/app.js"></script>
-<script src="resources/js/modules/menu-btn.js"></script>
-<!-- endbuild -->
 
-
+include "includes/footer.html"
 </body>
 </html>
