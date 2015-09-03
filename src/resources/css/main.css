@@ -183,7 +183,7 @@ article footer .tags a {
     transform: translate(-50%,-50%);*/
 }
 
-@keyframes "scroller" {
+@keyframes scroller {
     0% {
         bottom: 30px;
         opacity: 0.4;
@@ -219,7 +219,7 @@ article footer .tags a {
     }
 }
 
-@-webkit-keyframes "scroller" {
+@-webkit-keyframes scroller {
     0% {
         bottom: 30px;
         opacity: 0.4;
@@ -237,7 +237,7 @@ article footer .tags a {
     }
 }
 
-@-ms-keyframes "scroller" {
+@-ms-keyframes scroller {
     0% {
         bottom: 30px;
         opacity: 0.4;

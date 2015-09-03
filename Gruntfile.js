@@ -1,35 +1,87 @@
 module.exports = function (grunt) {
 
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-cdn');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-filerev');
-  grunt.loadNpmTasks('grunt-rev');
-  grunt.loadNpmTasks('grunt-usemin');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-compress');
-  grunt.loadNpmTasks('grunt-strip');
-  grunt.loadNpmTasks('grunt-includes');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-cdn');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-filerev');
+    grunt.loadNpmTasks('grunt-rev');
+    grunt.loadNpmTasks('grunt-usemin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-strip');
+    grunt.loadNpmTasks('grunt-includes');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-  // Define the configuration for all the tasks
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    clean: {
-      build: {
-        src: ["dev"]
-      },
+    // Define the configuration for all the tasks
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        clean: {
+            build: {
+                src: ["dev", "dist", "test", ".tmp", "tmp", "dest", ".tmp"]
+            },
 
-      trash: {
-        src: ["dev"]
-      }
-    }
-  });
+            trash: {
+                src: [".tmp"]
+            }
+        },
 
-  grunt.registerTask('dev', [
-    'watch'
-  ]);
-}
+        useminPrepare: {
+            src: ['src/includes/head.html'],
+            options: {
+                dest: 'dev', // destino arquivos concatenados -> unificados
+                root: 'src'
+            }
+        },
+
+        usemin: {
+            html: 'dev/index.html',
+            options: {
+                assetsDirs: ['dev']
+            }
+        },
+
+        includes: {
+            dev: {
+                options: {
+                    debug: false,
+                    flatten: true
+                },
+                files: [{
+                    src: ['dev/index.html'],
+                    dest: 'dev/index.html', // it must override
+                    flatten: true
+                }]
+            }
+        },
+
+        copy: {
+            dev: {
+                files: [
+                    {
+                        cwd: 'src/',
+                        expand: true,
+                        src: ['**/*.html'],
+                        dest: 'dev'
+                    }
+                ]
+            }
+        }
+    });
+
+
+
+    grunt.registerTask('dev', [
+        'clean:build',
+        'copy:dev',
+        'includes:dev',
+        'useminPrepare',
+        'concat:generated',
+        'cssmin:generated',
+        'uglify:generated',
+        'usemin'
+        //'clean:trash'
+    ]);
+};
