@@ -68,6 +68,17 @@ module.exports = function (grunt) {
                     }
                 ]
             }
+        },
+
+        watch: {
+            scripts: {
+                files: ['src/**/*.*'],
+                tasks: ['dev'],
+                options: {
+                    debounceDelay: 1000,
+                    //spawn: false
+                }
+            }
         }
     });
 
