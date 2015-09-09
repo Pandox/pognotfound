@@ -29,6 +29,21 @@ module.exports = function (grunt) {
             }
         },
 
+        rev: {
+            options: {
+                encoding: 'utf8',
+                algorithm: 'md5',
+                length: 8
+            },
+            dist: {
+                files: {
+                    src: [
+                        'dev/**/*.{js,css,img,jpg,gif,png}',
+                    ]
+                }
+            }
+        },
+
         useminPrepare: {
             src: ['src/includes/head.html', 'src/includes/footer.html'],
             options: {
@@ -68,15 +83,53 @@ module.exports = function (grunt) {
                         dest: 'dev'
                     }
                 ]
+            },
+            package: {
+                files: [
+                    {
+                        cwd: 'dev/',
+                        expand: true,
+                        src: ['*.html', 'resources/**'],
+                        dest: 'dist'
+                    }
+                ]
             }
         },
+
+        htmlmin: {
+            dist: {
+                options: {
+                    collapseWhitespace: true,
+                    collapseBooleanAttributes: true,
+                    removeCommentsFromCDATA: true,
+                    removeOptionalTags: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'dist',
+                    src: ['**/*.html'],
+                    dest: 'dist'
+                }]
+            }
+        },
+
+        // STRIP CONSOLE.log
+        strip: {
+            main: {
+                src: 'dist/resources/**/*.js',
+                options: {
+                    inline: true
+                }
+            }
+        },
+
 
         watch: {
             scripts: {
                 files: ['src/**/*.*'],
                 tasks: ['dev'],
                 options: {
-                    debounceDelay: 1000,
+                    debounceDelay: 1000
                     //spawn: false
                 }
             }
@@ -93,7 +146,15 @@ module.exports = function (grunt) {
         'concat:generated',
         'cssmin:generated',
         'uglify:generated',
+        'rev',
         'usemin',
         'clean:trash'
+    ]);
+
+    grunt.registerTask('package', [
+        'dev',
+        'copy:package',
+        'htmlmin:dist',
+        'strip:main'
     ]);
 };
