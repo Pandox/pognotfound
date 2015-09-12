@@ -25,7 +25,7 @@ module.exports = function (grunt) {
             },
 
             trash: {
-                src: [".tmp"]
+                src: [".tmp", "dev/includes"]
             }
         },
 
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     src: [
-                        'dev/**/*.{js,css,img,jpg,gif,png}',
+                        'dev/**/*.{js,css,img,jpg,gif,png}'
                     ]
                 }
             }
@@ -63,12 +63,12 @@ module.exports = function (grunt) {
             dev: {
                 options: {
                     debug: false,
-                    flatten: true
+                    flatten: false
                 },
                 files: [{
                     src: ['dev/**/*.html'],
                     dest: 'dev', // it must override
-                    flatten: true
+                    flatten: false
                 }]
             }
         },
@@ -124,6 +124,14 @@ module.exports = function (grunt) {
         },
 
 
+        concat: {
+            analytics: {
+                src: ['dev/includes/analytics.html', 'dev/includes/head.html'],
+                dest: 'dev/includes/head.html'
+
+            }
+        },
+
         watch: {
             scripts: {
                 files: ['src/**/*.*'],
@@ -152,7 +160,17 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('package', [
-        'dev',
+        'clean:build',
+        'copy:dev',
+        //'concat:analytics',
+        'includes:dev',
+        'useminPrepare',
+        'concat:generated',
+        'cssmin:generated',
+        'uglify:generated',
+        'rev',
+        'usemin',
+        'clean:trash',
         'copy:package',
         'htmlmin:dist',
         'strip:main'
