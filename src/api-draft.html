@@ -60,11 +60,11 @@ include "includes/menu.html"
                         </p>
 
                         <p>
-                            Desenvolver uma API e utilizá-la gerão forças totalmente diferentes e inversas. No momento da construção,
-                            você usa o chápeu de desenvolver e gasta o <strong>maior esforço possível</strong> para melhorar a qualidade do seu sistema internamente.
+                            Ser o desenvolvedor de uma API e ser o consumidor gera pensamentos e vontades totalmente diferentes e inversas. No momento da construção,
+                            você quer gastar o <strong>maior esforço possível</strong> para melhorar a qualidade do seu sistema internamente.
                             <br />
-                            Ao mesmo tempo, quando você se torna o utilizador de uma API, você quer gastar o <strong>menor esforço possível</strong>
-                            para poder utilizar aquele serviço. E se caso essa API seja mal construída, você passará por stress.
+                            Ao mesmo tempo, quando você se torna o consumidor, você quer gastar o <strong>menor esforço possível</strong>
+                            para poder utilizar aquele serviço. E se caso essa API seja mal construída, você passará por sérios problemas.
                         </p>
 
                         <p>
@@ -81,18 +81,102 @@ include "includes/menu.html"
                         </p>
 
                         <blockquote>
-                            Uma API é a UI de desenvolvedor. É como outra UI qualquer, de atenção a ela e seus clientes irão voltar!
+                            Uma API é a UI de desenvolvedor. Faça bom proveito da UX e seus clientes voltarão!<br />
                         </blockquote>
 
-                        <h3>Os 7 passos de ouro</h3>
+                        <h3>Os 7 passos de uma boa API</h3>
 
-                        <h4>Protocolo HTTP</h4>
+                        <h4>Utilize o protocolo HTTP</h4>
                         <p>
-
-
+                            Se existe um termo que está aumentando exponencialmente na área de TI é RESTful (vamor deixar <a
+                                href="http://martinfowler.com/articles/microservices.html"
+                                target="_blank">micro-serviços</a> para um próximo post).
+                            <a href="http://roy.gbiv.com/" target="_blank"> Roy Fielding</a> foi a primeira pessoa a introduzir o conceito, em sua tão famosa dissertação
+                            <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm" target="_blank">"Architectural Styles and
+                                the Design of Network-based Software Architectures"</a>.
                         </p>
 
+                        <p>
+                            Utilizar o HTTP como protocolo e REST como padrão de arquitetura para sua API lhe trará uma série de benefícios, como facilidade de uso (todo browser implementa o protocolo),
+                            segurança, cache, escalabilidade e <a href="https://pt.wikipedia.org/wiki/Manutenibilidade"
+                                                                  target="_blank"> manutenibilidade</a>.
+                        </p>
 
+                        <h4>Abuse e use dos conceitos RESTful</h4>
+                        <p>
+                            O REST girá em torno de seus recursos. Ele manda você construir sua API em recursos que são manipulados através dos métodos HTTP, cada qual com sua função.<br />
+                            Os <strong>recursos</strong> devem ser substantivos que devem fazer sentido para o seu negócio. O importante dessa parte é não expor recursos que são internos do seu negócio e que não fazem sentido para seus clientes.
+                        </p>
+
+                        <h4>Mantenha as URLs pequenas e concisas</h4>
+                        <p>
+                            Ninguém gosta de métodos com nomes gigantes, sem sentido ou que precisem de comentários para serem entendidos. Por que fazer isso com sua API?
+                        </p>
+                        <p>
+                            Crie URLs curtas e que sejam de fácil entendimento. Se beneficie dos métodos HTTP GET, POST, PUT, DELETE, PATCH para indicar sua ação. Veja alguns exemplos <strong>REAIS</strong>.
+                        </p>
+
+                        <ul>
+                            <li>GET /usuarios/1 - Busca o usuário de ID 1</li>
+                            <li>GET /usuarios/1/playlists/9 - Busca a playlist 9 do usuário 1</li>
+                            <li>POST /playlists - Cria uma nova playlist</li>
+                        </ul>
+
+                        <p>Agora veja os mesmos casos de uma forma incorreta. Consegue encontrar quantos erros existem nas URLs abaixo?</p>
+                        <ul>
+                            <li>GET /buscarUsuariosPorParam?idUser=1 - Busca o usuário de ID 1</li>
+                            <li>GET /usuarios/buscarPlaylists/9?idUser=1 - Busca a playlist 9 do usuário 1</li>
+                            <li>GET /playlists/criar - Cria uma nova playlist</li>
+                        </ul>
+
+                        <h4>Use JSON sempre que possível</h4>
+                        <p>A representação dos seus recursos deve ser em formato JSON. Se JSON for impossível de implementar, volte para o XML. Tome cuidado com qualquer outro tipo de exposição.</p>
+                        <pre>
+{
+    "id": 1,
+    "nome": "Matheus",
+    "site": "POGnotFound.com"
+}
+                        </pre>
+                        <p>O JSON possui uma série de vantagens sobre o XML.</p>
+                        <ul>
+                            <li>XML é díficil de ser lido por seres humanos. (Lembre-se nos seus clientes).</li>
+                            <li>Normalmente o XML é mais pesado, portanto, mais lento para ser interpretado pela máquina e transferido pela rede.</li>
+                            <li>JSON está sendo adotado por todo o mundo.</li>
+                            <li>Mapear seus recursos em XML pode lhe trazer algumas dúvidas em relação a atributos ou elementos.</li>
+                        </ul>
+
+                        <p>JSON lhe permite escalar sua API sem afetar os antigos clientes. Incluir campos a mais em seu recurso não deve impactar os clientes que jã estão utilizando sua API. O que nos remete ao próximo item.</p>
+
+                        <h4><strong>NUNCA</strong> versione</h4>
+                        <p>
+                            Muitos artigos descrevem como e quando versionar sua API. Afinal, ao fazer qualquer alteração no contrato JSON, você não quer mandar seus antigos clientes atualizarem as pressas suas aplicações.<br />
+                            Muitos parsers de JSON já suportam a funcionalidade de ignorar atributos desconhecidos, portanto, desde que você não altere os campos antigos, incluir novos atributos não deve ser um problema.
+                        </p>
+
+                        <p><strong>Mas e se você não tiver escolha?</strong> Vejamos um exemplo de uma cafeteira de grãos :</p>
+                        <pre>
+GET /cafeteira/1
+{
+    id: 1,
+    nome: "Cafeteira Elétrica POG Edition",
+    cafe: 500.00
+}
+                        </pre>
+                        <p>
+                            Esse JSON indica que a cafeteira possui 500 gramas de café. Mas nossa equipe de produtos desenvolveu uma cafeteira que possui um compartimento para mais de um tipo de café.
+                            Nossa API deve ser alterada e como eu disse, incluir um campo novo, chamado de cafe2, resolveria o problema. Mas não é uma solução elegante.
+                        </p>
+<pre>
+GET /cafeteira/1
+{
+    id: 1,
+    nome: "Cafeteira Elétrica POG Edition",
+    cafe: 500.00
+    cafe2: 500.00
+}
+
+</pre>
 
 
 
