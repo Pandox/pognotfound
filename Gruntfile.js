@@ -20,12 +20,15 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean: {
+            dev: {
+                src: ["dev"]
+            },
             build: {
-                src: ["dev", "dist", "test", ".tmp", "tmp", "dest", ".tmp"]
+                src: ["dist", "test", ".tmp", "tmp", "dest", ".tmp"]
             },
 
             trash: {
-                src: [".tmp", "dev/includes"]
+                src: [".tmp"]
             }
         },
 
@@ -62,13 +65,12 @@ module.exports = function (grunt) {
         includes: {
             dev: {
                 options: {
-                    debug: false,
-                    flatten: false
+                    debug: false
                 },
                 files: [{
-                    src: ['dev/**/*.html'],
+                    cwd: 'dev/',
+                    src: ['**/*.html'],
                     dest: 'dev', // it must override
-                    flatten: false
                 }]
             }
         },
@@ -78,9 +80,9 @@ module.exports = function (grunt) {
                 files: [
                     {
                         cwd: 'src/',
-                        expand: true,
-                        src: ['**/*.html'],
-                        dest: 'dev'
+                        src: ['**/*.html', 'includes/*.html'],
+                        dest: 'dev',
+                        expand: true
                     }
                 ]
             },
@@ -147,6 +149,7 @@ module.exports = function (grunt) {
 
 
     grunt.registerTask('dev', [
+        'clean:dev',
         'clean:build',
         'copy:dev',
         'includes:dev',
@@ -162,7 +165,7 @@ module.exports = function (grunt) {
     grunt.registerTask('package', [
         'clean:build',
         'copy:dev',
-        //'concat:analytics',
+        'concat:analytics',
         'includes:dev',
         'useminPrepare',
         'concat:generated',
@@ -173,6 +176,7 @@ module.exports = function (grunt) {
         'clean:trash',
         'copy:package',
         'htmlmin:dist',
-        'strip:main'
+        'strip:main',
+        'clean:dev'
     ]);
 };
