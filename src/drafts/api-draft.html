@@ -1,0 +1,130 @@
+include "../includes/head.html"
+
+<body>
+
+<!-- Blog Posts -->
+<section>
+    <main>
+        <div class="row">
+            <div class="small-12 small-centered columns">
+
+                <!-- Article -->
+                <article class="clearfix card shadow-1">
+                    <div class="content small-12 columns">
+                        <h3>Introdução</h3>
+
+                        <p>
+                            Nós, desenvolvedores, focamos nosso esforço em construir softwares com alta qualidade de código.
+                            Grande volume de testes unitários e código limpo são palavras chaves de todo bom programador.
+                            Livros como <a href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code</a>
+                            e
+                            <a href="http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X" target="_blank">The Pragmatic Programmer</a> surgem em conversas dessa
+                            natureza.
+                            Mas muitos não focam esse esforço em suas APIs.
+                        </p>
+
+                        <h4>O que é uma API?</h4>
+                        <p>
+                            Application Programming Interface, ou simplesmente API, é uma lista de rotinas, ferramentas e protocolos para construir software.
+                            Ela é usada para os programas se comunicarem entre si.
+                            Por exemplo, o Windows possui uma API para receber dados vindos de um device (teclado, mouse)
+                            e uma outra API para o Word poder ler esses dados e exibir na tela para o usuário.
+                        </p>
+
+                        <p>
+                            Ser o desenvolvedor de uma API e ser o consumidor dela geram interesses conflitantes. No momento da construção,
+                            você quer gastar o <strong>maior esforço possível</strong> para melhorar a qualidade do seu sistema internamente.
+                            <br />
+                            Ao mesmo tempo, quando você se torna o consumidor, você quer gastar o <strong>menor tempo possível</strong>
+                            para poder utilizar aquele serviço. E se caso a API seja mal construída, você ficará bem nervoso com ela.
+                        </p>
+
+                        <p>
+                            Se você já teve que utilizar a API do Facebook,
+                            <a
+                                href="http://techcrunch.com/2011/08/11/facebook-wins-worst-api-in-developer-survey/"
+                                target="_blank">
+                            você sabe do que eu estou falando (facebook wins worst API in developer survey).</a><br />
+                        </p>
+
+                        <p>
+                            Como você não pode se dar ao luxo de possuir uma base de dados de 1 bilhão de usuários,
+                            fazer uma boa API é essencial para aumentar a adoção de clientes.
+                        </p>
+
+                        <blockquote>
+                            Uma API é a UI de desenvolvedor. Faça bom proveito da UX e seus clientes voltarão!<br />
+                        </blockquote>
+
+                        <h3>Por que desenvolver uma boa API?</h3>
+
+                        <p>APIs de sucesso capturam clientes. Fazem eles usarem seus serviços de forma mais rápida.</p>
+                        <p>Desenvolva uma API díficil de se lidar e veja o número de ligações para a sua equipe de suporte aumentarem.
+                        </p>
+                        <p>Aumento do orgulho próprio! Seja conhecido como O DONO da melhor API da empresa.</p>
+
+                        <h4>Características de uma boa API</h4>
+
+                        <ul>
+                            <li>Fácil de usar, mesmo sem documentação,</li>
+                            <li>É extensível,</li>
+                            <li>Atende os requisitos de negócio,</li>
+                            <li>Confiável.</li>
+                        </ul>
+
+                        <p>Veja a seguir os 5 passos de como construir uma API de sucesso.</p>
+
+                        <h3>As 5 dicas de ouro</h3>
+
+                        <h4>1. A API deve respeitar o SRP</h4>
+                        <p>
+                            <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle" target="_blank">
+                                Single Responsability Principle</a> define que cada elemento deve ser responsável por uma única funcionalidade do software.
+                            Portanto, sua API deve fazer apenas uma única coisa, e fazê-la corretamente. Nem a mais, nem a menos.
+                        </p>
+
+                        <h4>2. A API deve ser suficiente para atender o negócio</h4>
+
+                        <p>
+                            Não construa funções a mais do que você precisa no momento. <a href="https://en.wikipedia.org/wiki/Overengineering" target="_blank">Over-engineering </a> é uma má prática e deve ser evitada. Isso pode dificultar o uso de sua API.
+                        </p>
+
+                        <blockquote>
+                            Não construa um canivete suíço se sua missão é apenas abrir uma garrafa.
+                        </blockquote>
+
+                        <h4>3. Os nomes importam sim</h4>
+                        <p>
+                            Não abrevie variáveis, não crie trocadilhos ou brincadeiras no código. Crie métodos claros e de fácil entendimento.
+                        </p>
+                        <blockquote>
+                            Está na dúvida se seu código é fácil de entender? Post nas redes sociais ou em sites de perguntas e respostas, deixe o link aqui nos comentários que será um prazer ajudá-lo.
+                        </blockquote>
+
+
+                        <h4>4. Minimize o acesso a informação.</h4>
+                        <p>
+                            Exponha o menos possível para seus clientes. Isso facilita a testabilidade da sua API, bem como o fácil entendimento dela (afinal, o cliente tem acesso a poucos dados).
+                            Em algumas linguagens utilizamos a keyword <strong>private</strong> ou interfaces para impedir o acesso a dados e implementações.
+                        </p>
+
+                        <blockquote>
+                            Menos é sempre mais!
+                        </blockquote>
+
+                        <h4>5. Documentação</h4>
+                        <p>
+                            Mesmo que seus métodos sejam claros e bem escritos, uma documentação dizendo o que esperar daquele métodos, os tipos de retorno, quando ocorrem suas excessões e
+                        quais são os pontos que os desenvolvedores devem se preocupar é essencial. Isso diminui a escala de aprendizagem de sua API, facilitando o uso dela.</p>
+
+                        <p>Só tome cuidado para manter esta documentação atualizada. Se para entender o funcionamento de uma função o cliente for obrigado a ver a implementação dela,
+                        é um sinal de má prática.</p>
+
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </main>
+</section>
+

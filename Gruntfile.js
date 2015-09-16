@@ -91,7 +91,7 @@ module.exports = function (grunt) {
                     {
                         cwd: 'dev/',
                         expand: true,
-                        src: ['*.html', 'resources/**'],
+                        src: ['*.html', 'resources/**', 'drafts/*.html'],
                         dest: 'dist'
                     }
                 ]

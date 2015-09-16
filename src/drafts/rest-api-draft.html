@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <title>POGnotFound </title>
-
-    include "includes/head.html"
-
-</head>
-
-<body>
-include "includes/menu.html"
-
-
-
-<header class="shadow-1">
-    <div class="row">
-
-        <div class="content">
-            <div class="small-12 small-centered columns">
-                <h3>{{TITLE}}</h3>
-
-                <p>{{SUBTITLE}}</p>
-
-            </div>
-        </div>
-        <div class="scroller" data-href="section">
-            <span class="glyphicon glyphicon-chevron-down"></span>
-        </div>
-    </div>
-</header>
-
-
+include "../includes/head.html"
 
 <!-- Blog Posts -->
 <section>
@@ -44,27 +12,29 @@ include "includes/menu.html"
                         <h3>Introdução</h3>
 
                         <p>
-                            Nós, desenvolvedores, focamos nosso esforço em construir softwares com uma alta qualidade de código.
-                            Grande volume de testes unitários, integrados e principalmente código limpo são palavras chaves de todo bom programador.
-                            Aposto que livros como Clean Code e The Pragmatic Programmer surgem em conversas dessa natureza.
-                            Mas muitos de nós não focamos em uma das partes que, pessoalmente, acredito ser uma das mais importantes. A API do seu sistema.
+                            Nós, desenvolvedores, focamos nosso esforço em construir softwares com alta qualidade de código.
+                            Grande volume de testes unitários e código limpo são palavras chaves de todo bom programador.
+                            Livros como <a href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code</a>
+                            e
+                            <a href="http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X" target="_blank">The Pragmatic Programmer</a> surgem em conversas dessa
+                            natureza.
+                            Mas muitos não focam esse esforço em suas APIs.
                         </p>
 
-                        <h4>API</h4>
+                        <h4>O que é uma API?</h4>
                         <p>
                             Application Programming Interface, ou simplesmente API, é uma lista de rotinas, ferramentas e protocolos para construir software.
                             Ela é usada para os programas se comunicarem entre si.
                             Por exemplo, o Windows possui uma API para receber dados vindos de um device (teclado, mouse)
                             e uma outra API para o Word poder ler esses dados e exibir na tela para o usuário.
-                            O Microsoft Word não se comunica diretamente com seu teclado, ele usa o Windows através de suas APIs para poder utilizar o teclado do usuário.
                         </p>
 
                         <p>
-                            Ser o desenvolvedor de uma API e ser o consumidor gera pensamentos e vontades totalmente diferentes e inversas. No momento da construção,
+                            Ser o desenvolvedor de uma API e ser o consumidor dela geram interesses conflitantes. No momento da construção,
                             você quer gastar o <strong>maior esforço possível</strong> para melhorar a qualidade do seu sistema internamente.
                             <br />
-                            Ao mesmo tempo, quando você se torna o consumidor, você quer gastar o <strong>menor esforço possível</strong>
-                            para poder utilizar aquele serviço. E se caso essa API seja mal construída, você passará por sérios problemas.
+                            Ao mesmo tempo, quando você se torna o consumidor, você quer gastar o <strong>menor tempo possível</strong>
+                            para poder utilizar aquele serviço. E se caso a API seja mal construída, você ficará bem nervoso com ela.
                         </p>
 
                         <p>
@@ -84,7 +54,7 @@ include "includes/menu.html"
                             Uma API é a UI de desenvolvedor. Faça bom proveito da UX e seus clientes voltarão!<br />
                         </blockquote>
 
-                        <h3>Os 7 passos de uma boa API</h3>
+                        <h3>As 7 dicas de ouro</h3>
 
                         <h4>1. Utilize o protocolo HTTP</h4>
                         <p>
@@ -105,7 +75,7 @@ include "includes/menu.html"
                         <h4>2. Abuse e use dos conceitos RESTful</h4>
                         <p>
                             O REST girá em torno de seus recursos. Ele manda você construir sua API em recursos que são manipulados através dos métodos HTTP, cada qual com sua função.<br />
-                            Os <strong>recursos</strong> devem ser substantivos que devem fazer sentido para o seu negócio. O importante dessa parte é não expor recursos que são internos do seu negócio e que não fazem sentido para seus clientes.
+                            Os <strong>recursos</strong> devem ser substantivos e devem fazer sentido para seus clientes. Não exponha recursos que não serão necessários.
                         </p>
 
                         <h4>3. Mantenha as URLs pequenas e concisas</h4>
@@ -148,7 +118,7 @@ include "includes/menu.html"
 
                         <p>JSON lhe permite escalar sua API sem afetar os antigos clientes. Incluir campos a mais em seu recurso não deve impactar os clientes que jã estão utilizando sua API. O que nos remete ao próximo item.</p>
 
-                        <h4>5. <strong>NUNCA</strong> versione</h4>
+                        <h4>5. Nunca versione</h4>
                         <p>
                             Muitos artigos descrevem como e quando versionar sua API. Afinal, ao fazer qualquer alteração no contrato JSON, você não quer mandar seus antigos clientes atualizarem as pressas suas aplicações.<br />
                             Muitos parsers de JSON já suportam a funcionalidade de ignorar atributos desconhecidos, portanto, desde que você não altere os campos antigos, incluir novos atributos não deve ser um problema.
@@ -165,7 +135,7 @@ GET /cafeteiras/1
                         </pre>
                         <p>
                             Esse JSON indica que a cafeteira possui 500 gramas de café. Mas nossa equipe de produtos desenvolveu uma cafeteira multigrãos que possui um compartimento para mais de um tipo de café.
-                            Nossa API deve ser alterada e como eu disse, incluir um campo novo, chamado de cafe2, resolveria o problema. Mas não é uma solução elegante.
+                            Nossa API deve ser alterada. Incluir um campo novo, chamado de cafe2, pode ser uma solução, mas não a mais elegante.
                         </p>
 <pre>
 GET /cafeteiras/2
@@ -250,13 +220,9 @@ GET /cafeteiras/multigraos/10
 
                     </div>
 
-                    include "includes/disqus.html"
                 </article>
             </div>
         </div>
     </main>
 </section>
 
-include "includes/footer.html"
-</body>
-</html>
