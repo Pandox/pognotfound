@@ -86,7 +86,7 @@ include "includes/menu.html"
 
                         <h3>Os 7 passos de uma boa API</h3>
 
-                        <h4>Utilize o protocolo HTTP</h4>
+                        <h4>1. Utilize o protocolo HTTP</h4>
                         <p>
                             Se existe um termo que está aumentando exponencialmente na área de TI é RESTful (vamor deixar <a
                                 href="http://martinfowler.com/articles/microservices.html"
@@ -102,13 +102,13 @@ include "includes/menu.html"
                                                                   target="_blank"> manutenibilidade</a>.
                         </p>
 
-                        <h4>Abuse e use dos conceitos RESTful</h4>
+                        <h4>2. Abuse e use dos conceitos RESTful</h4>
                         <p>
                             O REST girá em torno de seus recursos. Ele manda você construir sua API em recursos que são manipulados através dos métodos HTTP, cada qual com sua função.<br />
                             Os <strong>recursos</strong> devem ser substantivos que devem fazer sentido para o seu negócio. O importante dessa parte é não expor recursos que são internos do seu negócio e que não fazem sentido para seus clientes.
                         </p>
 
-                        <h4>Mantenha as URLs pequenas e concisas</h4>
+                        <h4>3. Mantenha as URLs pequenas e concisas</h4>
                         <p>
                             Ninguém gosta de métodos com nomes gigantes, sem sentido ou que precisem de comentários para serem entendidos. Por que fazer isso com sua API?
                         </p>
@@ -129,7 +129,7 @@ include "includes/menu.html"
                             <li>GET /playlists/criar - Cria uma nova playlist</li>
                         </ul>
 
-                        <h4>Use JSON sempre que possível</h4>
+                        <h4>4. Use JSON sempre que possível</h4>
                         <p>A representação dos seus recursos deve ser em formato JSON. Se JSON for impossível de implementar, volte para o XML. Tome cuidado com qualquer outro tipo de exposição.</p>
                         <pre>
 {
@@ -148,7 +148,7 @@ include "includes/menu.html"
 
                         <p>JSON lhe permite escalar sua API sem afetar os antigos clientes. Incluir campos a mais em seu recurso não deve impactar os clientes que jã estão utilizando sua API. O que nos remete ao próximo item.</p>
 
-                        <h4><strong>NUNCA</strong> versione</h4>
+                        <h4>5. <strong>NUNCA</strong> versione</h4>
                         <p>
                             Muitos artigos descrevem como e quando versionar sua API. Afinal, ao fazer qualquer alteração no contrato JSON, você não quer mandar seus antigos clientes atualizarem as pressas suas aplicações.<br />
                             Muitos parsers de JSON já suportam a funcionalidade de ignorar atributos desconhecidos, portanto, desde que você não altere os campos antigos, incluir novos atributos não deve ser um problema.
@@ -156,30 +156,79 @@ include "includes/menu.html"
 
                         <p><strong>Mas e se você não tiver escolha?</strong> Vejamos um exemplo de uma cafeteira de grãos :</p>
                         <pre>
-GET /cafeteira/1
+GET /cafeteiras/1
 {
     id: 1,
-    nome: "Cafeteira Elétrica POG Edition",
+    nome: "Cafeteira Elétrica Simples POG Edition",
     cafe: 500.00
 }
                         </pre>
                         <p>
-                            Esse JSON indica que a cafeteira possui 500 gramas de café. Mas nossa equipe de produtos desenvolveu uma cafeteira que possui um compartimento para mais de um tipo de café.
+                            Esse JSON indica que a cafeteira possui 500 gramas de café. Mas nossa equipe de produtos desenvolveu uma cafeteira multigrãos que possui um compartimento para mais de um tipo de café.
                             Nossa API deve ser alterada e como eu disse, incluir um campo novo, chamado de cafe2, resolveria o problema. Mas não é uma solução elegante.
                         </p>
 <pre>
-GET /cafeteira/1
+GET /cafeteiras/2
 {
-    id: 1,
-    nome: "Cafeteira Elétrica POG Edition",
+    id: 2,
+    nome: "Cafeteira Elétrica Simples POG Edition",
     cafe: 500.00
     cafe2: 500.00
 }
 
 </pre>
 
+                        <p>Ao invés disso precisamos criar uma estrutura de dados melhor para o campo cafe.</p>
+<pre>
+GET /cafeteiras/2
+{
+    id: 2,
+    nome: "Cafeteira Elétrica MultiGrãos POG Edition",
+    cafe: [
+        {
+            quantidade: 500.00,
+            tipo: "Cafe Moido Zalita"
+        },
+        {
+            quantidade: 500.00,
+            tipo: "Cafe Gourmet++"
+        }
+    ]
+}
+</pre>
+
+                        <p>
+                            Mas como fazer isso sem versionamento? Se o seu recurso foi alterado drasticamente, como no nosso caso, ele não represente mais o mesmo recurso.
+                            Ele deve ser mapeado e construído como um novo recurso e com isso, uma nova URL. Sendo assim, os dois recursos viverão para sempre no ciclo de vida da sua API, não afetando antigos nem novos clientes.
+                        </p>
+<pre>
+GET /cafeteiras/multigraos/10
+</pre>
+
+                        <h4>6. Documentação</h4>
+                        <p>Uma API sem documentação não é uma boa API. Seja claro e mostre exemplos completos e reais de requisições da sua API.</p>
+
+                        <p>Utilize softwares para geração automática e gerenciamento de sua documentação como por exemplo o
+                            <a href="https://apigee.com/about/" target="_blank"> Apigee</a> e <a href="http://swagger.io/" target="_blank">Swagger</a></p>
+
+                        <p>Uma vez que sua API se tornou pública, mantenha o changelog em sua documentação, seja transparente em casos de falhas e indique futuras alteraçoes.</p>
 
 
+                        <p>Construir uma SDK para utilização de sua API também é uma boa, apesar do alto custo de desenvolvimento.</p>
+
+                        <h4>Utilize sua API !</h4>
+                        <p>Você já deve ter ouvido falar que desenvolvimento de software não é uma ciência exata. Por isso, utilize sua API, fique do outro lado da moeda e seja o cliente da sua API. Peça feedback, mantenha um canal ativo
+                        com seus clientes-desenvolvedores para melhorar ainda mais sua API. Pense (e pense bastante) antes de disponibilizá-la para o público. Conceitos como segurança, caching, autenticação, tráfego de rede,
+                        latencia, entre outros, devem ser analisados e testados. </p>
+
+                        <h3>Inspire-se</h3>
+                        <p>Selecionei alguns exemplos de APIs mundialmente famosas para você se basear e ter algumas ídeias.</p>
+                        <ul>
+                            <li><a href="https://developers.facebook.com/docs/graph-api/overview/" target="_blank">Facebook API</a></li>
+                            <li><a href="https://dev.twitter.com/overview/documentation" target="_blank">Twitter API</a> </li>
+                            <li><a href="https://developer.github.com/v3/" target="_blank"> Github API</a></li>
+                            <li><a href="http://apidev.accuweather.com/developers/" target="_blank"> Accuweather API</a></li>
+                        </ul>
 
                         <!--
                         <p>
