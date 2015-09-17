@@ -30,12 +30,26 @@ include "../includes/head.html"
 
                         <h4>PUT</h4>
                         <blockquote>
-                            Uma requisição PUT garante que o recurso deve ser criado ou substituido pela mensagem enviada na requisição,
-                            e que caso de sucesso, uma próxima requisição pelo GET na mesma URL deve resultar na representação
+                            Uma requisição PUT garante que o recurso deve ser criado ou substituido pela mensagem enviada na requisição.
+                            Sendo sucesso, uma próxima requisição pelo método GET na mesma URL deve resultar na representação
                             equivalente com o status 200 (OK).<br />
                             Se o recurso indicado pela URI não existir, ele deve ser criado e um retorno 201 deve ser exibido.<br />
                             Caso o recurso exista e seja substituido pela nova mensagem, tanto um status 200 ou 204 deve ser retornado.
                         </blockquote>
+
+                        <h3>Resumindo</h3>
+
+                        <h4>Quando usar o POST</h4>
+                        <ul>
+                            <li>Quando você não souber o ID do recurso. Ele será criado pelo servidor e retornado para você no resultado.</li>
+                            <li>Quando a requisição não necessariamente criar um recurso. Por exemplo, ao enviar um e-mail, iniciar um workflow.</li>
+                        </ul>
+
+                        <h4>Quando usar um PUT</h4>
+                        <ul>
+                            <li>Quando você quiser alterar um recurso que já existe e você sabe seu ID. </li>
+                            <li>Quando você quiser criar um recurso e sabe qual sua URI única. Por exemplo, solicitar uma nova bebida do tipo cappuccino, um PUT na URL máquinas/123/cappuccino estaria correto.</li>
+                        </ul>
 
                     </div>
 
