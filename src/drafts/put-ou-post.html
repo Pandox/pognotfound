@@ -1,0 +1,46 @@
+include "../includes/head.html"
+
+<!-- Blog Posts -->
+<section>
+    <main>
+        <div class="row">
+            <div class="small-12 small-centered columns">
+
+                <!-- Article -->
+                <article class="clearfix card shadow-1">
+                    <div class="content small-12 columns">
+                        <h3>A grade polêmica do REST</h3>
+
+                        <p>Se você já desenvolveu uma API REST, você já deve ter se deparado com essa pergunta.</p>
+                        <p>Devemos usar <strong>PUT ou POST</strong>? Qual a diferença entre eles?</p>
+
+                        <p>Uma pergunta tão básica mas que causa uma grande discussão. Para responde-la, precisamos olhar para o protocolo HTTP.
+                            Roy Fielding, um dos criadores do conceito REST descreve o
+                            <a href="http://tools.ietf.org/html/draft-ietf-httpbis-p2-semantics-16#section-7.5" target="_blank">POST</a> e PUT
+                            de maneira bem semelhante, mas com uma leve e crucial diferença.</p>
+
+                        <h4>POST</h4>
+                        <blockquote>
+                            O método <strong>POST</strong> ordena que o servidor receba a requisição, bem como o dado incluso, e solicite para aquele
+                            recurso (URI) processar a requisição.<br />
+                            Caso um recurso foi criado, o resultado da ação deve ser um status 201 (Created) e conter este novo recurso.<br />
+                            Caso o resultado da ação não criou um recurso, por exemplo, enviou um email para o cliente, o resultado da ação deve ser
+                            um status 204 (No content) ou 200 (OK).
+                        </blockquote>
+
+                        <h4>PUT</h4>
+                        <blockquote>
+                            Uma requisição PUT garante que o recurso deve ser criado ou substituido pela mensagem enviada na requisição,
+                            e que caso de sucesso, uma próxima requisição pelo GET na mesma URL deve resultar na representação
+                            equivalente com o status 200 (OK).<br />
+                            Se o recurso indicado pela URI não existir, ele deve ser criado e um retorno 201 deve ser exibido.<br />
+                            Caso o recurso exista e seja substituido pela nova mensagem, tanto um status 200 ou 204 deve ser retornado.
+                        </blockquote>
+
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </main>
+</section>

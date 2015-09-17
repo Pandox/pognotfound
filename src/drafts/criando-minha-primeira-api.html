@@ -1,0 +1,94 @@
+include "../includes/head.html"
+
+<!-- Blog Posts -->
+<section>
+    <main>
+        <div class="row">
+            <div class="small-12 small-centered columns">
+
+                <!-- Article -->
+                <article class="clearfix card shadow-1">
+                    <div class="content small-12 columns">
+                        <h3>Smartycoffee - A cafeteira inteligente</h3>
+
+                        <p>Quer construir passo a passo uma API REST ?</p>
+                        <p>Não sabe quais são os padrões para o desenvolvimento de uma API ?</p>
+                        <p>Vamos criar uma API escalável, segura, <a href="http://martinfowler.com/articles/richardsonMaturityModel.html" target="_blank">madura</a>
+                        e que possa ser acessada por qualquer dispositivo do mundo.</p>
+
+                        <h3>Smartycoffee - A cafeteira inteligente</h3>
+
+                        <p>
+                            Para construir uma API REST, precisamos saber qual problema ela atende. Neste caso fomos contratados por uma
+                            empresa que fábrica máquinas de café, aquelas que você bota a cápsula, para construir os serviços de TI para
+                            uma máquina ultra-inteligente, a <strong>Smartycoffee</strong>.</p>
+
+                        <p>O cliente através do seu celular ou relógio inteligente poderá apertar um botão e solicitar para a <strong>Smartycoffee</strong> preparar
+                        alguma bebida, seja ela um café expresso, cappuccino ou chá verde. Basta ele (e a máquina) estar conectado na internet (WiFi)
+                        para fazer a solicitação. Caso a máquina não tenha agua, acabe a cápsula ou não tenha os copinhos descartáveis, o usuário deve receber um alerta.</p>
+
+                        <h4>Requisitos Funcionais</h4>
+
+                        <h5>Solicitar bebida</h5>
+                        <ul>
+                            <li>O usuário, através do aplicativo de celular, escolhe uma <strong>bebida</strong> entre [Chá verde, Café expresso ou Cappuccino]</li>
+                            <li>A máquina recebe o <strong>pedido</strong> e começa a preparar a bebida</li>
+                            <li>A máquina termina de fazer o pedido e avisa o cliente que terminou</li>
+                        </ul>
+
+                        <h5>Monitoramento</h5>
+                        <p>A máquina deve fornecer <strong>informações</strong> para o usuário da seguinte natureza:</p>
+                        <ul>
+                            <li>Quantidade de cápsulas restantes</li>
+                            <li>Quantidade de copos restantes</li>
+                            <li>Quantidade de bebidas realizadas</li>
+                        </ul>
+
+                        <h5>Comprar cápsulas</h5>
+                        <p>Pelo aplicativo será possível comprar novas <strong>cápsulas</strong> para a máquina.</p>
+
+                        <h3>REST API</h3>
+                        <p>Vamos seguir o padrão REST para nossa API e usar o protocolo HTTP. Para facilitar este tutorial,
+                        vamos ter uma URL base como <strong>https://smartycoffee.pognotfound.com.br/api</strong> . </p>
+                        <p>Cada cliente que comprar uma máquina nova, receberá um ID único númerico da máquina. Por simplicidade, este ID é incremental.</p>
+                        <p>O princípio básico do REST está em volta dos seus recursos. Os recursos são definidos na URL, e suas ações através dos métodos HTTP (GET, POST, PUT...).</p>
+
+                        <h4>Definindo os Recursos</h4>
+
+                        <blockquote>
+                            Analise os requisitos funcionais e levante o maior número de <strong>substantivos</strong> que fazem parte do negócio.<br />
+                        </blockquote>
+                        <p>Na sessão anterior destaquei alguns substantivos para facilitar. Consegue identificar todos?</p>
+                        <p>Temos Máquina, Bebida, Pedido e Informações como substantivos. Esses são nossos <strong>recursos</strong>. Vamos deixar a compra de cápsulas para depois.</p>
+                        <p>Cada recurso receberá uma URL única de identificação. Por exemplo: https://smartycoffee.pognotfound.com.br/api/maquinas - Representa a coleções de máquinas</p>
+
+                        <h4>Mapeando as Ações. É PUT ou POST?</h4>
+                        <p>Cada recurso possui diversas ações. Vamos começar com a bebida. Você pode solicitar uma nova bebida, e verificar o status dela.</p>
+                        <p>Vamos usar o protocolo HTTP agora. </p>
+
+
+                        <!--
+                        <p>
+                            Podemos imaginar uma API para uma cafeteira elétrica, essas de colocar a capsúla.
+                        </p>
+                        <p><strong>Protocolo: </strong> Manual. O usuário utiliza das mãos para se comunicar com o sistema cafeteira.</p>
+                        <p><strong>Rotinas: </strong> Funções da cafeteira.</p>
+                        <ul>
+                            <li>Ligar</li>
+                            <li>Desligar</li>
+                            <li>Escolher nível de água</li>
+                            <li>Preparar bebida</li>
+                            <li>Inserir a cápsula</li>
+                            <li>Retirar as cápsulas</li>
+                        </ul>
+                        -->
+
+                        <h4></h4>
+
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </main>
+</section>
