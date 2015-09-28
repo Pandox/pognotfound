@@ -9,12 +9,12 @@ include "../includes/head.html"
                 <!-- Article -->
                 <article class="clearfix card shadow-1">
                     <div class="content small-12 columns">
-                        <h3>A grade polêmica do REST</h3>
+                        <h3>A grande polêmica do REST</h3>
 
                         <p>Se você já desenvolveu uma API REST, você já deve ter se deparado com essa pergunta.</p>
                         <p>Devemos usar <strong>PUT ou POST</strong>? Qual a diferença entre eles?</p>
 
-                        <p>Uma pergunta tão básica mas que causa uma grande discussão. Para responde-la, precisamos olhar para o protocolo HTTP.
+                        <p>Uma pergunta tão básica mas que causa uma grande discussão. Para respondê-la, precisamos olhar para o protocolo HTTP.
                             Roy Fielding, um dos criadores do conceito REST descreve o
                             <a href="http://tools.ietf.org/html/draft-ietf-httpbis-p2-semantics-16#section-7.5" target="_blank">POST</a> e PUT
                             de maneira bem semelhante, mas com uma leve e crucial diferença.</p>
@@ -48,7 +48,20 @@ include "../includes/head.html"
                         <h4>Quando usar um PUT</h4>
                         <ul>
                             <li>Quando você quiser alterar um recurso que já existe e você sabe seu ID. </li>
-                            <li>Quando você quiser criar um recurso e sabe qual sua URI única. Por exemplo, solicitar uma nova bebida do tipo cappuccino, um PUT na URL máquinas/123/cappuccino estaria correto.</li>
+                            <li>Quando você quiser criar um recurso e sabe qual sua URI única.</li>
+                        </ul>
+
+                        <h3>Exemplos</h3>
+                        <ul>
+                            <li>POST - /api/usuario - Cria um novo usuário</li>
+                            <li>PUT &nbsp;- /api/usuario/123 - Altera o usuário com ID 123</li>
+                            <li>POST - /api/email - Envia um novo e-mail</li>
+                            <li>POST - /api/tweet/123/favorito - Favorita o tweet com ID 123</li>
+                            <li>POST - /api/usuario/123/posts/like - Curte todos os posts do usuário 123</li>
+                            <li>POST - /api/post/comentario/123/comentario - Cria um sub-comentário do comentário com ID 123</li>
+
+                            <li>PUT &nbsp;- /api/post/usar-put-ou-post - Cria um novo artigo com ID do texto (<a href="http://www.w3.org/Provider/Style/URI" target="_blank">URL-friendly</a>)</li>
+                            <li>PUT &nbsp;- /api/carro/AAA-1234 - Altera os valores do carro com placa AAA-1234</li>
                         </ul>
 
                     </div>
