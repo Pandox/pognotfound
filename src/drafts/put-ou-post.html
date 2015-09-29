@@ -17,10 +17,8 @@ http://www.infoq.com/presentations/rest-introduction?utm_source=infoqEmail&utm_m
                         <p>Devemos usar <strong>PUT ou POST</strong>? Qual a diferença entre eles?</p>
 
                         <p>Uma pergunta tão básica mas que causa uma grande discussão. Para respondê-la, precisamos olhar para o protocolo HTTP.
-                            Roy Fielding, um dos criadores do conceito REST descreve o
-                            <a href="http://tools.ietf.org/html/draft-ietf-httpbis-p2-semantics-16#section-7.5" target="_blank">POST</a> e PUT
+                            Roy Fielding, um dos criadores do conceito REST <a href="http://tools.ietf.org/html/draft-ietf-httpbis-p2-semantics-16#section-7.5" target="_blank">descreve</a> o POST e PUT
                             de maneira bem semelhante, mas com uma leve e crucial diferença.</p>
-
 
                         <h4>POST</h4>
                         <blockquote>
@@ -33,12 +31,37 @@ http://www.infoq.com/presentations/rest-introduction?utm_source=infoqEmail&utm_m
 
                         <h4>PUT</h4>
                         <blockquote>
-                            Uma requisição PUT garante que o recurso deve ser criado ou substituido pela mensagem enviada na requisição.
+                            Uma requisição PUT garante que o recurso deve ser criado ou substituido pela mensagem enviada na requisição, sempre.
                             Sendo sucesso, uma próxima requisição pelo método GET na mesma URL deve resultar na representação
                             equivalente com o status 200 (OK).<br />
                             Se o recurso indicado pela URI não existir, ele deve ser criado e um retorno 201 deve ser exibido.<br />
                             Caso o recurso exista e seja substituido pela nova mensagem, tanto um status 200 ou 204 deve ser retornado.
                         </blockquote>
+
+                        <h4>Idempotência</h4>
+                        <p>Outra confusão que ocorre é sobre a idempotência dos métodos. Idempotência é a propriedade que operações têm de poderem ser aplicadas
+                            diversas vezes sem alterar o resultado inicial. Considere os seguintes exemplos, sendo X um número inteiro positivo:
+                        </p>
+                        <pre>
+1: X = 1
+                        </pre>
+
+                        <pre>
+2: X = X + 1
+                        </pre>
+
+                        <pre>
+3: X = X * 1
+                        </pre>
+                        <p>O primeiro exemplo é idempotente, ou seja, caso ele seja executado diversas vezes, o valor final sempre será o mesmo. No caso X sempre será igual a 1.<br />
+                            Já o segundo caso é diferente. Caso a operação seja executada diversas vezes, o valor de X será sempre diferente. Este caso não é idempotente.<br />
+                            E no terceiro caso? Sendo X um número inteiro positivo, consegue saber se a operação é idempotente ou não? Comente abaixo o que você acha.</p>
+
+                        <p>No REST, o método POST <strong>não</strong> é idempotente, pois uma vez um recurso criado, você não poderá recria-lo.
+                            No entanto, o PUT é idempotente. Ao solicitar para que os dados de um recurso sejam trocado por novos,
+                            o servidor sempre trocará os dados, sendo o resultado final o mesmo.<br />
+                        É parecido com nosso primeiro exemplo. Estamos sempre trocando o valor de X por um mesmo valor.</p>
+
 
                         <h3>Resumindo</h3>
 
@@ -62,8 +85,7 @@ http://www.infoq.com/presentations/rest-introduction?utm_source=infoqEmail&utm_m
                             <li>POST - /api/tweet/123/favorito - Favorita o tweet com ID 123</li>
                             <li>POST - /api/usuario/123/posts/like - Curte todos os posts do usuário 123</li>
                             <li>POST - /api/post/comentario/123/comentario - Cria um sub-comentário do comentário com ID 123</li>
-
-                            <li>PUT &nbsp;- /api/post/usar-put-ou-post - Cria um novo artigo com ID do texto (<a href="http://www.w3.org/Provider/Style/URI" target="_blank">URL-friendly</a>)</li>
+                            <li>PUT &nbsp;- /api/post/put-ou-post - Cria um novo artigo com ID igual a put-ou-post (<a href="http://www.w3.org/Provider/Style/URI" target="_blank">URL-friendly</a>)</li>
                             <li>PUT &nbsp;- /api/carro/AAA-1234 - Altera os valores do carro com placa AAA-1234</li>
                         </ul>
 
