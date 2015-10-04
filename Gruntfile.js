@@ -70,7 +70,7 @@ module.exports = function (grunt) {
                 files: [{
                     cwd: 'dev/',
                     src: ['**/*.html'],
-                    dest: 'dev', // it must override
+                    dest: 'dev' // it must override
                 }]
             }
         },
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         cwd: 'src/',
-                        src: ['**/*.html', 'includes/*.html'],
+                        src: ['*.html', 'includes/*.html'],
                         dest: 'dev',
                         expand: true
                     }
@@ -91,7 +91,7 @@ module.exports = function (grunt) {
                     {
                         cwd: 'dev/',
                         expand: true,
-                        src: ['*.html', 'resources/**', 'drafts/*.html'],
+                        src: ['*.html', 'resources/**'],
                         dest: 'dist'
                     }
                 ]
